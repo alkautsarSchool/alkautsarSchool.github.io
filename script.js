@@ -17,7 +17,7 @@ document.getElementById("loginForm").addEventListener("submit", function (event)
                 localStorage.setItem('status', authenticatedUser.status);
                 window.location.href = "congratulation.html";
             } else {
-                alert("NISN atau nama salah atau tidak ditemukan.");
+                alert("NISN atau Nama yang dimauskan salah, silahkan coba kembali.");
             }
         })
         .catch(error => console.error('Error:', error));
