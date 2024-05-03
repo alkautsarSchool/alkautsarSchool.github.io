@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon"
+        href="https://yayasanal-kautsar.sch.id/wp-content/uploads/2018/01/cropped-Logo-Yayasan-512x512-32x32.png"
+        sizes="32x32">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Congratulation</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="header">Alhamdulillah, <br><b id="showNama"></b> <br>dinyatakan</h1>
+        <div class="box">
+            <h1 class="status" id="status">LULUS</h1>
+            <p class="font-red" id="showStatus"></p>
+        </div>
+        <div class="info">
+            <p class="bottom-0">Informasi:</p>
+            <p id="showInfo"></p>
+        </div>
+    </div>
+</body>
+<style>
+    .bottom-0 {
+        margin-bottom: 0px;
+        font-size: 14px;
+    }
+
+    #showInfo {
+        margin-top: 3px;
+    }
+
+    body {
+        font-family: 'Arial', sans-serif;
+        background-color: #f4f4f4;
+        background: url('grad.png');
+        color: #2C3C50;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-size: cover;
+        background-position: center;
+    }
+
+    .container {
+        max-width: 800px;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .header {
+        text-align: center;
+        color: #333;
+        margin-bottom: 20px;
+    }
+
+    .status {
+        text-align: center;
+        color: #08A459;
+        margin-bottom: 30px;
+    }
+
+    .info {
+        font-size: 16px;
+        line-height: 1.6;
+    }
+
+    @media only screen and (max-width: 600px) {
+        .container {
+            margin: 20px;
+            padding: 10px;
+        }
+    }
+
+    .box {
+        text-align: center;
+    }
+
+    .box h1 {
+        margin-bottom: 5px;
+    }
+
+    .box p {
+        margin-bottom: 0.5em;
+        margin-top: 0;
+    }
+
+    .font-red {
+        color: red;
+    }
+</style>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+
+        var nisn = localStorage.getItem('nisn');
+        if (!nisn) {
+            window.location.href = "index.html";
+        }
+        var nama = localStorage.getItem('nama');
+        var kelas = localStorage.getItem('kelas');
+        var status = localStorage.getItem('status');
+
+        // document.getElementById("showNisn").innerText = nisn;
+        document.getElementById("showNama").innerText = nama;
+        document.getElementById("showInfo").innerText =
+            "Untuk pengambilan SKL dImulai pada hari Selasa, 7 Mei 2024 dengan menggunakan seragam sekolah.";
+
+        if (status != "LULUS") {
+            document.getElementById("showStatus").innerText = "*Dengan syarat menyotor hafalan juz 1";
+            document.getElementById("showInfo").innerText =
+                "Untuk pengambilan SKL dilakukan setelah menyelesaikan setoran hafalannya dan disetujui oleh guru T2Q";
+        }
+
+    });
+</script>
+<script>
+    window.onload = function () {
+        // Ambil NISN dari local storage
+        var nisn = localStorage.getItem('nisn');
+        if (!nisn) {
+            window.location.href = "index.html";
+        } else {
+            localStorage.removeItem('nisn');
+            localStorage.removeItem('nama');
+            localStorage.removeItem('kelas');
+            localStorage.removeItem('status');
+        }
+    };
+</script>
+
+</html>

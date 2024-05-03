@@ -1,17 +1,24 @@
-var modal = document.getElementById('myModal');
-var btn = document.getElementById("openModalBtn");
-var span = document.getElementsByClassName("close")[0];
+document.getElementById("loginForm").addEventListener("submit", function (event) {
+    event.preventDefault(); // Prevent form submission
+    var nisn = document.getElementById("nisn").value;
+    var nama = document.getElementById("nama").value;
 
-btn.onclick = function() {
-    modal.style.display = "block";
-}
+    // Fetch user data
+    fetch('user.json')
+        .then(response => response.json())
+        .then(data => {
+            var users = data.users;
 
-span.onclick = function() {
-    modal.style.display = "none";
-}
-
-window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
-}
+            var authenticatedUser = users.find(user => user.nisn === nisn && user.nama === nama);
+            if (authenticatedUser) {
+                localStorage.setItem('nisn', authenticatedUser.nisn);
+                localStorage.setItem('nama', authenticatedUser.nama);
+                localStorage.setItem('kelas', authenticatedUser.kelas);
+                localStorage.setItem('status', authenticatedUser.status);
+                window.location.href = "congratulation.html";
+            } else {
+                alert("NISN atau nama salah atau tidak ditemukan.");
+            }
+        })
+        .catch(error => console.error('Error:', error));
+});
