@@ -10,6 +10,49 @@
    <title>SMA IT AL KAUTSAR</title>
    <link rel="stylesheet" href="style.css">
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+   <style>
+      .modal {
+         display: none;
+         /* Sembunyikan modal secara default */
+         position: fixed;
+         /* Tetapkan posisi tetap */
+         z-index: 9999;
+         /* Atur indeks z untuk menempatkannya di atas konten lainnya */
+         left: 0;
+         top: 0;
+         width: 100%;
+         height: 100%;
+         overflow: auto;
+         /* Izinkan pengguna untuk scroll jika konten modal terlalu panjang */
+         background-color: rgba(0, 0, 0, 0.4);
+         /* Tambahkan efek keabuan */
+      }
+
+      .modal-content {
+         background-color: #fefefe;
+         margin: 15% auto;
+         padding: 20px;
+         border: 1px solid #888;
+         width: 80%;
+         position: relative;
+         /* Tetapkan posisi relatif */
+      }
+
+      .modal-content h2 {
+         font-size: 50px;
+      }
+
+      .modal-body {
+         text-align: center;
+         margin-top: 100px;
+         text-shadow:
+            -1px -1px 0 #ffffff,
+            1px -1px 0 #ffffff,
+            -1px 1px 0 #ffffff,
+            1px 1px 0 #ffffff;
+         /* Outline dengan bayangan di sekitar teks */
+      }
+   </style>
 </head>
 
 <body>
@@ -20,22 +63,87 @@
             <div class="field">
                <span class="fa"></span>
                <input id="nama" name="nama" type="text" required placeholder="NAMA" pattern="[A-Za-z\s]+"
-                  title="Hanya huruf saja yang diperbolehkan" style="text-transform: uppercase">
+                  title="Hanya huruf saja yang diperbolehkan" style="text-transform: uppercase" disabled>
             </div>
             <div class="field space">
                <span class="fa"></span>
-               <input id="nisn" name="nisn" type="number" required placeholder="NISN" pattern="[0-9]+" maxlength=10
-                  title="Hanya angka saja diperbolehkan">
+               <input id="nisn" name="nisn" type="number" required placeholder="NISN" maxlength="10" disabled>
             </div>
             <div class="field space">
-               <input type="submit" value="CEK HASIL">
+               <input type="submit" id="submitButton" value="CEK HASIL" disabled>
             </div>
          </form>
-
-
+      </div>
+   </div>
+   <!-- Modal pop-up -->
+   <div id="myModal" class="modal">
+      <div class="modal-content">
+         <span class="close">&times;</span>
+         <div class="modal-body">
+            <h2>Hasil Kelulusan Dibuka Tanggal 6 MEI 2024 Pukul 21:00</h2>
+            <br>
+            Mohon Tunggu Hingga
+            <h1 id="timer">00:00:00</h1>
+            <br>
+            <br>
+         </div>
       </div>
    </div>
    <script src="script.js"></script>
+   <script>
+      // Panggil fungsi startTimer saat DOM siap
+      document.addEventListener("DOMContentLoaded", function () {
+         // Waktu pada Senin, 6 Mei pukul 21:00 dalam detik
+         var targetTime = new Date("May 1, 2024 21:00:00").getTime();
+         var now = new Date().getTime();
+         var timeRemaining = Math.max(targetTime - now, 0) / 1000;
+
+         var display = document.getElementById("timer");
+         startTimer(timeRemaining, display);
+
+         // Tampilkan modal saat timer masih berjalan
+         var modal = document.getElementById("myModal");
+         if (timeRemaining > 0) {
+            modal.style.display = "block";
+         }
+
+         // Tutup modal saat tombol close diklik atau saat mengklik di luar modal
+         var span = document.getElementsByClassName("close")[0];
+         window.onclick = function (event) {
+            if (event.target == modal) {
+               modal.style.display = "none";
+            }
+         }
+         span.onclick = function () {
+            modal.style.display = "none";
+         }
+      });
+
+      // Fungsi untuk memulai timer
+      function startTimer(duration, display) {
+         var timer = duration,
+            hours, minutes, seconds;
+         setInterval(function () {
+            hours = parseInt(timer / 3600, 10);
+            minutes = parseInt((timer % 3600) / 60, 10);
+            seconds = parseInt(timer % 60, 10);
+
+            hours = hours < 10 ? "0" + hours : hours;
+            minutes = minutes < 10 ? "0" + minutes : minutes;
+            seconds = seconds < 10 ? "0" + seconds : seconds;
+
+            display.textContent = hours + ":" + minutes + ":" + seconds;
+
+            if (--timer < 0) {
+               timer = 0;
+               // Aktifkan tombol "CEK HASIL" setelah timer habis
+               document.getElementById("submitButton").disabled = false;
+               document.getElementById("nisn").disabled = false;
+               document.getElementById("nama").disabled = false;
+            }
+         }, 1000);
+      }
+   </script>
 </body>
 
 </html>

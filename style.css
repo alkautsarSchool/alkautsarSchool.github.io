@@ -125,91 +125,34 @@
   font-family: 'Poppins', sans-serif;
 }
 
-.links {
-  display: flex;
-  cursor: pointer;
-  color: white;
-  margin: 0 0 20px 0;
-}
-
-.facebook,
-.instagram {
-  width: 100%;
-  height: 45px;
-  line-height: 45px;
-  margin-left: 10px;
-}
-
-.facebook {
-  margin-left: 0;
-  background: #4267B2;
-  border: 1px solid #3e61a8;
-}
-
-.instagram {
-  background: #E1306C;
-  border: 1px solid #df2060;
-}
-
-.facebook:hover {
-  background: #3e61a8;
-}
-
-.instagram:hover {
-  background: #df2060;
-}
-
-.links i {
-  font-size: 17px;
-}
-
-i span {
-  margin-left: 8px;
-  font-weight: 500;
-  letter-spacing: 1px;
-  font-size: 16px;
-  font-family: 'Poppins', sans-serif;
-}
-
-.signup {
-  font-size: 15px;
-  color: white;
-  font-family: 'Poppins', sans-serif;
-}
-
-.signup a {
-  color: #3498db;
-  text-decoration: none;
-}
-
-.signup a:hover {
-  text-decoration: underline;
-}
-
-.popup-box {
+/* CSS untuk modal */
+.modal {
   display: none;
   position: fixed;
-  top: 0;
+  z-index: 1;
   left: 0;
+  top: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: 9999;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+  color: #2C3C50;
+  font-family: 'Montserrat', sans-serif;
+
+
 }
 
-.popup-content {
+.modal-content {
   background-color: #fefefe;
-  margin: 20% auto;
+  background: linear-gradient(rgba(254, 254, 254, 0.8), rgba(254, 254, 254, 0.8)), url('grad.png');
+  margin: 15% auto;
   padding: 20px;
-  border-radius: 5px;
-  width: 70%;
-  max-width: 400px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  position: relative;
+  border: 1px solid #888;
+  width: 80%;
 }
 
 .close {
-  color: #aaa;
+  color: #aaaaaa;
   float: right;
   font-size: 28px;
   font-weight: bold;
@@ -217,10 +160,11 @@ i span {
 
 .close:hover,
 .close:focus {
-  color: black;
+  color: #000;
   text-decoration: none;
   cursor: pointer;
 }
+
 
 @media only screen and (max-width: 1000px) {
 
