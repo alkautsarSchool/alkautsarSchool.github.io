@@ -104,7 +104,7 @@
 
         var nisn = localStorage.getItem('nisn');
         if (!nisn) {
-            window.location.href = "index.html";
+            window.location.href = "./";
         }
         var nama = localStorage.getItem('nama');
         var kelas = localStorage.getItem('kelas');
@@ -113,7 +113,7 @@
         // document.getElementById("showNisn").innerText = nisn;
         document.getElementById("showNama").innerText = nama;
         document.getElementById("showInfo").innerText =
-            "Untuk pengambilan SKL dImulai pada hari Selasa, 7 Mei 2024 dengan menggunakan seragam sekolah.";
+            "Untuk pengambilan SKL dimulai pada hari Selasa, 7 Mei 2024 dengan menggunakan seragam sekolah.";
 
         if (status != "LULUS") {
             document.getElementById("showStatus").innerText = "*Dengan syarat menyotor hafalan juz 1";
@@ -128,7 +128,7 @@
         // Ambil NISN dari local storage
         var nisn = localStorage.getItem('nisn');
         if (!nisn) {
-            window.location.href = "index.html";
+            window.location.href = "./";
         } else {
             localStorage.removeItem('nisn');
             localStorage.removeItem('nama');

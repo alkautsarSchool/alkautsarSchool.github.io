@@ -11,6 +11,50 @@
    <link rel="stylesheet" href="style.css">
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
    <style>
+      .header {
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         /* Memusatkan konten horizontal */
+      }
+
+      h2 {
+         font-size: 30px;
+      }
+
+      .header img {
+         width: 70px;
+         /* Atur lebar gambar */
+         height: auto;
+         /* Biarkan ketinggian gambar disesuaikan */
+         margin: 0 10px;
+         /* Jarak antara gambar dan teks */
+      }
+
+      @media only screen and (max-width: 1000px) {
+
+         /* Tambahkan kode CSS berikut di bagian style tag */
+         .header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            /* Memusatkan konten horizontal */
+         }
+
+         h2 {
+            font-size: 40px;
+         }
+
+         .header img {
+            width: 85px;
+            /* Atur lebar gambar */
+            height: auto;
+            /* Biarkan ketinggian gambar disesuaikan */
+            margin: 0 10px;
+            /* Jarak antara gambar dan teks */
+         }
+      }
+
       .modal {
          display: none;
          /* Sembunyikan modal secara default */
@@ -52,25 +96,45 @@
             1px 1px 0 #ffffff;
          /* Outline dengan bayangan di sekitar teks */
       }
+
+      .logo {
+         width: 120px;
+      }
+
+      .non-editable {
+         /* Mencegah pengguna untuk mengubah nilai input */
+         pointer-events: none;
+         /* Memberikan tampilan seperti non-aktif */
+         background-color: #f2f2f2;
+         color: #999;
+         /* Membuat teks tampak seperti tidak bisa dipilih */
+         user-select: none;
+         /* Mengatur kursor menjadi default */
+         cursor: default;
+      }
    </style>
 </head>
 
 <body>
    <div class="bg-img">
       <div class="content">
-         <header>HASIL KELULUSAN<br>SMA IT AL KAUTSAR<br>2024</header>
+         <header class="header">
+            <img src="logo.png" alt="Logo"> <!-- Logo di sini -->
+            <h2>HASIL KELULUSAN <br>SMA IT AL KAUTSAR <br>TP.2023/2024</h2>
+            <img src="logo.png" alt="Logo"> <!-- Logo di sini -->
+         </header>
          <form id="loginForm">
             <div class="field">
                <span class="fa"></span>
-               <input id="nama" name="nama" type="text" required placeholder="NAMA" pattern="[A-Za-z\s]+"
-                  title="Hanya huruf saja yang diperbolehkan" style="text-transform: uppercase" disabled>
+               <input class="non-editable" id="nama" name="nama" type="text" required placeholder="NAMA"
+                  pattern="[A-Za-z\s]+" title="Hanya huruf saja yang diperbolehkan" style="text-transform: uppercase">
             </div>
             <div class="field space">
                <span class="fa"></span>
-               <input id="nisn" name="nisn" type="number" required placeholder="NISN" maxlength="10" disabled>
+               <input class="non-editable" id="nisn" name="nisn" type="number" required placeholder="NISN">
             </div>
             <div class="field space">
-               <input type="submit" id="submitButton" value="CEK HASIL" disabled>
+               <input class="non-editable" type="submit" id="submitButton" value="CEK HASIL">
             </div>
          </form>
       </div>
@@ -91,12 +155,13 @@
    </div>
    <script src="script.js"></script>
    <script>
+      var timeRemaining = 0
       // Panggil fungsi startTimer saat DOM siap
       document.addEventListener("DOMContentLoaded", function () {
          // Waktu pada Senin, 6 Mei pukul 21:00 dalam detik
          var targetTime = new Date("May 6, 2024 21:00:00").getTime();
          var now = new Date().getTime();
-         var timeRemaining = Math.max(targetTime - now, 0) / 1000;
+         timeRemaining = Math.max(targetTime - now, 0) / 1000;
 
          var display = document.getElementById("timer");
          startTimer(timeRemaining, display);
@@ -137,12 +202,37 @@
             if (--timer < 0) {
                timer = 0;
                // Aktifkan tombol "CEK HASIL" setelah timer habis
-               document.getElementById("submitButton").disabled = false;
-               document.getElementById("nisn").disabled = false;
-               document.getElementById("nama").disabled = false;
+               document.getElementById("nama").classList.remove("non-editable");
+               document.getElementById("nisn").classList.remove("non-editable");
+               document.getElementById("submitButton").classList.remove("non-editable");
+            } else {
+               document.getElementById("nama").addEventListener("focus", openModal);
+               document.getElementById("nisn").addEventListener("focus", openModal);
+               document.getElementById("submitButton").addEventListener("click", openModal);
             }
          }, 1000);
       }
+
+      // Fungsi untuk menampilkan modal saat field NISN atau nama diklik
+      function openModal() {
+         // Periksa apakah timer masih berjalan
+         if (timeRemaining > 0) {
+            // Timer masih berjalan, tampilkan pop-up modal
+            var modal = document.getElementById("myModal");
+            modal.style.display = "block";
+         }
+      }
+
+      // Menampilkan modal saat dokumen diklik, kecuali pada modal atau tombol close
+      document.addEventListener("click", function (event) {
+         var modal = document.getElementById("myModal");
+         var time = document.getElementById("timer").textContent
+         if (time == "00:00:00") {
+
+         } else if (event.target !== modal && !modal.contains(event.target)) {
+            modal.style.display = "block";
+         }
+      });
    </script>
 </body>
 

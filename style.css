@@ -31,7 +31,7 @@
   z-index: 999;
   text-align: center;
   padding: 60px 32px;
-  width: 450px;
+  width: 560px;
   transform: translate(-50%, -50%);
   background: rgba(255, 255, 255, 0.04);
   box-shadow: -1px 4px 28px 0px rgba(0, 0, 0, 0.75);
@@ -144,7 +144,7 @@
 
 .modal-content {
   background-color: #fefefe;
-  background: linear-gradient(rgba(254, 254, 254, 0.8), rgba(254, 254, 254, 0.8)), url('grad.png');
+  background: linear-gradient(rgba(254, 254, 254, 0.3), rgba(254, 254, 254, 0.3)), url('grad.png');
   margin: 15% auto;
   padding: 20px;
   border: 1px solid #888;
@@ -215,6 +215,7 @@
     cursor: pointer;
     font-family: 'Montserrat', sans-serif;
   }
+
 
 
 }

@@ -1,8 +1,8 @@
 document.getElementById("loginForm").addEventListener("submit", function (event) {
     event.preventDefault(); // Prevent form submission
     var nisn = document.getElementById("nisn").value;
-    var nama = document.getElementById("nama").value;
-
+    var nama = document.getElementById("nama");
+    nama = nama.value.toUpperCase();
     // Fetch user data
     fetch('user.json')
         .then(response => response.json())
@@ -15,7 +15,7 @@ document.getElementById("loginForm").addEventListener("submit", function (event)
                 localStorage.setItem('nama', authenticatedUser.nama);
                 localStorage.setItem('kelas', authenticatedUser.kelas);
                 localStorage.setItem('status', authenticatedUser.status);
-                window.location.href = "congratulation.html";
+                window.location.href = "congratulation";
             } else {
                 alert("NISN atau Nama yang dimauskan salah, silahkan coba kembali.");
             }
