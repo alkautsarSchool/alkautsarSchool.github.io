@@ -1,0 +1,189 @@
+{
+  "users": [{
+      "nama": "ALUNA CHAIRUNNISA ERYAN",
+      "nisn": "0078149509",
+      "kelas": "XII NUSAYBAH",
+      "status": "LULUS"
+    },
+    {
+      "nama": "CALLYSTA TABHITA RISANTI",
+      "nisn": "0059262014",
+      "kelas": "XII NUSAYBAH",
+      "status": "LULUS"
+    },
+    {
+      "nama": "DEVANY AMELIA PUTRI",
+      "nisn": "0063011994",
+      "kelas": "XII NUSAYBAH",
+      "status": "LULUS"
+    },
+    {
+      "nama": "ELSA WULAN ANGGRAINI",
+      "nisn": "0076515869",
+      "kelas": "XII NUSAYBAH",
+      "status": "LULUS"
+    },
+    {
+      "nama": "FELISHA DWI YANDRA PUTRI",
+      "nisn": "0064517671",
+      "kelas": "XII NUSAYBAH",
+      "status": "LULUS"
+    },
+    {
+      "nama": "HAMZATUL JANNAH FADSYA",
+      "nisn": "0074897369",
+      "kelas": "XII NUSAYBAH",
+      "status": "LULUS"
+    },
+    {
+      "nama": "KHAIRUNNISA`SYAHIRAH",
+      "nisn": "0071579970",
+      "kelas": "XII NUSAYBAH",
+      "status": "LULUS"
+    },
+    {
+      "nama": "MAYLA FAIZA",
+      "nisn": "0074459037",
+      "kelas": "XII NUSAYBAH",
+      "status": "LULUS"
+    },
+    {
+      "nama": "RAUDHATUL `IZZAH",
+      "nisn": "0066049321",
+      "kelas": "XII NUSAYBAH",
+      "status": "LULUS"
+    },
+    {
+      "nama": "SALMA HANIFA",
+      "nisn": "0078186231",
+      "kelas": "XII NUSAYBAH",
+      "status": "LULUS"
+    },
+    {
+      "nama": "SALWA AUFADHILA",
+      "nisn": "0065206465",
+      "kelas": "XII NUSAYBAH",
+      "status": "LULUS"
+    },
+    {
+      "nama": "TASZKIA AULIA",
+      "nisn": "0066694935",
+      "kelas": "XII NUSAYBAH",
+      "status": "LULUS BERSYARAT"
+    },
+    {
+      "nama": "AHDA FARISURRAFIF",
+      "nisn": "0075340223",
+      "kelas": "XII AL-BATTANI",
+      "status": "LULUS"
+    },
+    {
+      "nama": "ARFAN ASTIAN",
+      "nisn": "0075322600",
+      "kelas": "XII AL-BATTANI",
+      "status": "LULUS"
+    },
+    {
+      "nama": "DANIEL VALERIE",
+      "nisn": "0073925278",
+      "kelas": "XII AL-BATTANI",
+      "status": "LULUS"
+    },
+    {
+      "nama": "FAREL FABIAN",
+      "nisn": "0079176123",
+      "kelas": "XII AL-BATTANI",
+      "status": "LULUS"
+    },
+    {
+      "nama": "FAUZUL KABIR",
+      "nisn": "0079208636",
+      "kelas": "XII AL-BATTANI",
+      "status": "LULUS"
+    },
+    {
+      "nama": "GERRA ADI PUTRA",
+      "nisn": "0076161970",
+      "kelas": "XII AL-BATTANI",
+      "status": "LULUS BERSYARAT"
+    },
+    {
+      "nama": "IHSAN NULHAKIM",
+      "nisn": "0067380824",
+      "kelas": "XII AL-BATTANI",
+      "status": "LULUS"
+    },
+    {
+      "nama": "M. FADLI SYAHRIAL PUTRA",
+      "nisn": "0061560573",
+      "kelas": "XII AL-BATTANI",
+      "status": "LULUS"
+    },
+    {
+      "nama": "M. FIKRI SYAHRIAL PUTRA",
+      "nisn": "0061726047",
+      "kelas": "XII AL-BATTANI",
+      "status": "LULUS"
+    },
+    {
+      "nama": "MUAZ AL GHAZALI",
+      "nisn": "0055871195",
+      "kelas": "XII AL-BATTANI",
+      "status": "LULUS BERSYARAT"
+    },
+    {
+      "nama": "MUHAMMAD DAFFA ALFAJRI",
+      "nisn": "0064351688",
+      "kelas": "XII AL-BATTANI",
+      "status": "LULUS"
+    },
+    {
+      "nama": "MUHAMMAD HABIB AL FAROUQ",
+      "nisn": "0073313168",
+      "kelas": "XII AL-BATTANI",
+      "status": "LULUS BERSYARAT "
+    },
+    {
+      "nama": "MUHAMMAD KHAIRI FAKHRIZAL",
+      "nisn": "0078026009",
+      "kelas": "XII AL-BATTANI",
+      "status": "LULUS"
+    },
+    {
+      "nama": "MUHAMMAD NAUFAL RAFIF HAWARI",
+      "nisn": "0074494815",
+      "kelas": "XII AL-BATTANI",
+      "status": "LULUS"
+    },
+    {
+      "nama": "MUHAMMAD SURYA AL FARREL",
+      "nisn": "0076497469",
+      "kelas": "XII AL-BATTANI",
+      "status": "LULUS"
+    },
+    {
+      "nama": "MUHAMMAD SYAFIQ BAIHAQI",
+      "nisn": "0075246637",
+      "kelas": "XII AL-BATTANI",
+      "status": "LULUS"
+    },
+    {
+      "nama": "PUTRA MAJID AL HAKIM",
+      "nisn": "0079459789",
+      "kelas": "XII AL-BATTANI",
+      "status": "LULUS"
+    },
+    {
+      "nama": "RASYA EKA ARDIANSYAH",
+      "nisn": "0075446728",
+      "kelas": "XII AL-BATTANI",
+      "status": "LULUS"
+    },
+    {
+      "nama": "RAZI ALFATIH DESYA",
+      "nisn": "0089108427",
+      "kelas": "XII AL-BATTANI",
+      "status": "LULUS"
+    }
+  ]
+}
